@@ -27,12 +27,13 @@ client.on('message', msg => {
   if(msg.content === 'beep'){
     msg.reply('boop!')
   }
+  if(msg.content === 'is here.'){
+    // msg.reply('Welcome to life boat!');
+    msg.reply(`Hey  ${msg.author}, welcome to life boat! Thanks for joining.`)
+  }
 });
 
-// client.on('message', msg => {
-//   if (msg.content === 'beep') {
-//     msg.reply('boop!');
-//   }
-// });
+
+
 // Login to Discord with your client's token
 client.login(process.env.token);
