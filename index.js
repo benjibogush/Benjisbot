@@ -10,7 +10,8 @@ app.listen(port, () => console.log(`Example app listening at https://Benjisbot.b
 const { Client, Intents } = require('discord.js');
 
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_INVITES] });
+
 
 // const { Client, Intents } = require('discord.js');
 // const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
@@ -19,9 +20,10 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 // When the client is ready, run this code (only once)
 client.once('ready', (it) => {
 	console.log(it.user.tag, ' is ready!');
+
 });
 
-client.on('message', msg => {
+client.on('messageCreate', msg => {
   if (msg.content === 'ping') {
     msg.reply('pong!');
   }
@@ -48,14 +50,17 @@ client.on('messageCreate', (message) => {
     }
 });
 
-client.on('messageCreate', (message) => {
-    if(message.content.toLowerCase().includes('fudge') || message.content.toLowerCase().includes('pudding')){
-        message.channel.send('Such language is prohibited!');
-        message.delete();
-    }
+const event = require(`./events/deleteCommand.js`);
+event(client)
+
+client.on("typingStart", function(channel, user){
+    console.log(`${user.tag} has started typing`);
 });
 
-
+client.on("messageDeleteBulk", (msg, text) => {
+  msg.delete(text);
+    
+});
 
 
 client.on("error", function(error){
