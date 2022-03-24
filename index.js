@@ -19,7 +19,7 @@ const help = require(`./events/helper.js`)
 help(client)
 
 // responds and deletes prohibited words
-const event = require(`./events/deleteCommand.js`);
+const event = require(`./events/delete.js`);
 event(client)
 
 // responds inside the console in the event of errors

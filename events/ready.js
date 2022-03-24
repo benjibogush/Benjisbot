@@ -3,7 +3,7 @@ const ready  = (client) => {
         client.once('ready', (it) => {
       	console.log(it.user.tag, ' is ready!');
       console.log(`I am ready! Logged in as   ${client.user.tag}!`);
-      console.log(`Bot has started, with ${client.users.size.cache} users, 
+      console.log(`Bot has started, with ${client.users.size} users, 
                       in ${client.channels.size} channels of                                          ${client.guilds.size} guilds.`);
       
         	client.user.setActivity("kaboom");
