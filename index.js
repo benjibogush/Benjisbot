@@ -18,9 +18,17 @@ redi.ready(client)
 const help = require(`./events/helper.js`)
 help(client)
 
+
 // responds and deletes prohibited words
 const event = require(`./events/delete.js`);
 event(client)
+
+const del = require(`./events/delete2.js`);
+del(client)
+
+
+const purge = require(`./events/bulkdelete.js`);
+
 
 // responds inside the console in the event of errors
 const error = require(`./events/error.js`);
