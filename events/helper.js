@@ -2,6 +2,8 @@ module.exports = (client) => {
   const cases = ['bot', 'hello', 'hi', 'help', 'assistance']
   const questions = ['invite link', 'invitation', 'register', 'join', 'link', 'share link', 'send link', 'join discord', 'share with friends']
   const udemy = ['udemy','udemy link', 'course link', 'java course link']
+
+
   
 client.on('messageCreate', (message) => {
     // if(message.content.toLowerCase().includes('hey bot') || message.content.toLowerCase().includes('help')){
