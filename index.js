@@ -28,6 +28,10 @@ del(client)
 
 
 const purge = require(`./events/bulkdelete.js`);
+// purge(client, 'remove messages')
+
+const sendImage = require(`./events/sendImage`)
+sendImage(client)
 
 
 // responds inside the console in the event of errors

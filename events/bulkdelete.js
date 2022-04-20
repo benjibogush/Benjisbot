@@ -16,7 +16,8 @@ userPermissions: ['MANAGE_MESSAGES'],
     limit: count + 1,
   });
   
-  const filtered = messages.filter( msg => Date.now() - ms.createdTimestamp < ms('14 days'));
+ 
+    const filtered = messages.filter( msg => Date.now() - ms.createdTimestamp < ms('14 days'));
 
   await interaction.channel.bulkDelete(filtered)
 
