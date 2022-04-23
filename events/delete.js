@@ -1,18 +1,16 @@
-const Profanity = require('profanity-js');
-
+var Filter = require('bad-words'),
+  filter = new Filter();
+var customFilter = new Filter({ placeHolder: 'x'});
 
 module.exports = (client) => {
-  const list = []
 
   client.on('messageCreate', (message) => {
-    const profanity = new Profanity()
-    
     if (message.content.toLowerCase().includes('fudge') || message.content.toLowerCase().includes('pudding')) {
       message.channel.send('Such language is prohibited!');
       message.delete();
     }
 
-    if(profanity.isProfane(message.content.toLowerCase())){
+    if(filter.isProfane(message.content.toLowerCase()) ){
        message.channel.send('Such language is prohibited!');
        message.delete();
     }

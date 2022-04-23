@@ -18,7 +18,7 @@ module.exports = (client) => {
       const randomIndex = Math.floor(Math.random() * files.length)
       const file = files[randomIndex]
 
-      if (message.content.toLowerCase() === ('tech')) {
+      if (message.content.toLowerCase() === 'tech') {
         message.channel.send({ files: [{ attachment: path + file }] })
       }
 

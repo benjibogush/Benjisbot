@@ -23,8 +23,8 @@ help(client)
 const event = require(`./events/delete.js`);
 event(client)
 
-const del = require(`./events/delete2.js`);
-del(client)
+// const del = require(`./events/delete2.js`);
+// del(client)
 
 
 const purge = require(`./events/bulkdelete.js`);
