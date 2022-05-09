@@ -1,11 +1,11 @@
-module.exports = (client) => {
+module.exports = async (client) => {
   const cases = ['bot', 'hello', 'hi', 'help', 'assistance']
   const questions = ['invite link', 'invitation', 'register', 'join', 'link', 'share link', 'send link', 'join discord', 'share with friends', 'discord link']
   const udemy = ['udemy', 'udemy link', 'course link', 'java course link']
 
 
 
-  client.on('messageCreate', (message) => {
+ await client.on ('messageCreate', (message)  =>  {
     // if(message.content.toLowerCase().includes('hey bot') || message.content.toLowerCase().includes('help')){
     //     message.channel.send("Hello there! Want to contact `@benji --admin`");
     // }
@@ -14,7 +14,8 @@ module.exports = (client) => {
     }
 
     if (questions.includes(message.content.toLowerCase())) {
-      message.channel.send("Here you go: `https://discord.gg/2FZE72sT3P`")
+       message.channel.send("Here you go:\n")
+      message.channel.send(`https://discord.gg/2FZE72sT3P`)
     }
 
     if (udemy.includes(message.content.toLowerCase())) {
@@ -28,6 +29,13 @@ module.exports = (client) => {
       }
     }
 
-  });
+    if(message.content.toLowerCase() === 'me'){
+          // client.users.cache.find(user => message.channel.send(user.username) ) returns bot ?
+      client.users.fetch(user => message.channel.send(user) ).then(console.log)
+    .catch(console.error);
+      
+    }
+
+  })
 
 }
