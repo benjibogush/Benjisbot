@@ -18,12 +18,13 @@ module.exports = (client) => {
     }
 
     if (udemy.includes(message.content.toLowerCase())) {
-      message.channel.send("Here you go: `https://www.udemy.com/course/technical-java-interview-prep-for-it-professionals/?referralCode=52FF1762CE17827E3DF5`")
+      message.channel.send('here you go: \n')
+      message.channel.send(`https://www.udemy.com/course/technical-java-interview-prep-for-it-professionals/?referralCode=52FF1762CE17827E3DF5 `)
     }
 
     if (message.content.toLowerCase() === 'coupon') {
-      for (let i = 3; i > 0; i--) {
-        message.channel.send("Here you go: `${i}`")
+      for (let i = 1; i > 0; i--) {
+        message.channel.send("HAPPYMOTHERSDAY")
       }
     }
 
