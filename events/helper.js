@@ -18,7 +18,7 @@ module.exports = (client) => {
     }
 
     if (udemy.includes(message.content.toLowerCase())) {
-      message.channel.send("Here you go: `https://www.udemy.com/course/technical-java-interview-prep-for-it-professionals/`")
+      message.channel.send("Here you go: `https://www.udemy.com/course/technical-java-interview-prep-for-it-professionals/?referralCode=52FF1762CE17827E3DF5`")
     }
 
     if (message.content.toLowerCase() === 'coupon') {
